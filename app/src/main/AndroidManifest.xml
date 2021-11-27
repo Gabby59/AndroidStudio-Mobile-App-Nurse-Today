@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.uk.nursetoday">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NurseToday">
+        <activity android:name=".Agency_Posted_Jobs" />
+        <activity android:name=".View.Post_Job2" />
+        <activity android:name=".View.MainActivity" />
+        <activity android:name=".Job_Details" />
+        <activity android:name=".Adapters.List_Jobs_Board" />
+        <activity android:name=".View.Dashboard" />
+        <activity android:name=".View.Register_Agency" />
+        <activity android:name=".View.Splash" />
+        <activity android:name=".View.Register_Nurse" />
+        <activity android:name=".View.User_Type_Reg" />
+        <activity android:name=".View.ResetPw" />
+
+        <activity
+            android:name=".View.Post_Job_Image_upload">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

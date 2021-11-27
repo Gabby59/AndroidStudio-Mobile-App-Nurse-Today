@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="210dp">
+
+
+    <RelativeLayout
+        android:layout_width="411dp"
+        android:layout_height="210dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/agencyImage_jobcard"
+            android:layout_width="100dp"
+            android:layout_height="67dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_jobTitle_jobcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/agencyImage_jobcard"
+            android:layout_toRightOf="@+id/agencyImage_jobcard"
+            android:padding="3dp"
+            android:text="Job Title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/agencyImage_jobcard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_nurseCat_jobcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_jobTitle_jobcard"
+            android:layout_gravity="center"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toEndOf="@+id/agencyImage_jobcard"
+            android:layout_toRightOf="@+id/agencyImage_jobcard"
+            android:padding="3dp"
+            android:text="Nurse Category"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/agencyImage_jobcard"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jobTitle_jobcard" />
+
+        <TextView
+            android:id="@+id/tv_locationCat_jobcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_jobTitle_jobcard"
+            android:layout_gravity="center"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toEndOf="@+id/tv_nurseCat_jobcard"
+            android:layout_toRightOf="@+id/agencyImage_jobcard"
+            android:padding="3dp"
+            android:text="Location Category"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nurseCat_jobcard" />
+
+
+        <TextView
+            android:id="@+id/tv_author_jobcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nurseCat_jobcard"
+            android:layout_gravity="center"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/agencyImage_jobcard"
+            android:layout_toRightOf="@+id/agencyImage_jobcard"
+            android:padding="3dp"
+            android:text="Agency Author"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/agencyImage_jobcard"
+            app:layout_constraintTop_toBottomOf="@+id/tv_locationCat_jobcard" />
+
+        <TextView
+            android:id="@+id/tv_description_jobcard"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/agencyImage_jobcard"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="15dp"
+            android:text="Description... \nthis will be a short preview of job description..\ntake URL picture from post job id refernce"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.151"
+            app:layout_constraintStart_toEndOf="@+id/agencyImage_jobcard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_details_jobcard"
+            android:layout_width="99dp"
+            android:layout_height="46dp"
+            android:layout_below="@+id/tv_description_jobcard"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="153dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="154dp"
+            android:layout_marginBottom="10dp"
+            android:text="Details"
+            tools:layout_editor_absoluteX="182dp"
+            tools:layout_editor_absoluteY="113dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
