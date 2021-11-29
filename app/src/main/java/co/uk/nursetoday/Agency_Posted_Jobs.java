@@ -33,7 +33,7 @@ public class Agency_Posted_Jobs extends AppCompatActivity implements JobAdapter.
 
     private RecyclerView rv;
     private TextView title;
-    private Button myApplications;
+    private Button msg;
 
     private RecyclerView.LayoutManager manager;
     private JobAdapter myJobAdapter;
@@ -64,12 +64,10 @@ public class Agency_Posted_Jobs extends AppCompatActivity implements JobAdapter.
         //DESIGN COMPONENTS
         title = findViewById(R.id.tv_title_posted_jobs);
        // sell = findViewById(R.id.btn_sellBook_itemList);
-        //btnmsgs = findViewById(R.id.btn_messages_itemList);
         //myBooks = findViewById(R.id.btn_myBooks_itemList);
         //booksforSale = findViewById(R.id.btn_bookSale_itemList);
-        //topic = findViewById(R.id.btn_topic_itemList);
 
-        myApplications = findViewById(R.id.btn_myApplications_posted_jobs);
+        msg = findViewById(R.id.btn_msg_posted_jobs);
 
         //RECYCLER VIEW COMPONENTS
         rv = findViewById(R.id.rv_jobslist);
@@ -80,33 +78,33 @@ public class Agency_Posted_Jobs extends AppCompatActivity implements JobAdapter.
         Extras = getIntent().getExtras();
         jobId = Extras.getString("ITEM");
         item2 = Extras.getInt("ITEM2");
-        dbref = FirebaseDatabase.getInstance().getReference().child(jobId);
+        dbref = FirebaseDatabase.getInstance().getReference("Job_Vacancies"); //.child(jobId);
         dbref.addListenerForSingleValueEvent(listener);
 
 
         //TOOL BAR FOR MESSAGE DELETE UNDO
-//        setSupportActionBar(toolbar);
+     //   setSupportActionBar(toolbar);
         view = findViewById(R.id.coordinatorLayout);
 
 
        /* sell.setOnClickListener(v -> {
             Intent i = new Intent(Books_for_sale_List.this, Post_Book.class);
             startActivity(i);
-        });
-        btnmsgs.setOnClickListener(v -> {
-            Intent i = new Intent(Books_for_sale_List.this, Books_for_sale_List.class);
+        }); */
+        msg.setOnClickListener(v -> {
+            Intent i = new Intent(Agency_Posted_Jobs.this, Agency_Posted_Jobs.class);
             i.putExtra("ITEM", "Messages");
             i.putExtra("ITEM2", 1);
             startActivity(i);
         });
 
-        */
-        myApplications.setOnClickListener(v -> {
+
+        /*myApplications.setOnClickListener(v -> {
             Intent i = new Intent(Agency_Posted_Jobs.this, Agency_Posted_Jobs.class);
             i.putExtra("ITEM", "Job_Vacancies");
             i.putExtra("ITEM2", 2);
             startActivity(i);
-        });
+        }); */
       /*  booksforSale.setOnClickListener(v -> {
             Intent i = new Intent(Books_for_sale_List.this, Books_for_sale_List.class);
             i.putExtra("ITEM", "Books_for_Sale");
@@ -122,12 +120,17 @@ public class Agency_Posted_Jobs extends AppCompatActivity implements JobAdapter.
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             if (item2 == 2) {
                 for (DataSnapshot dss: snapshot.getChildren()) {
+
+                    if (dss.getValue(Job_Ad.class).getAvaiable()) {
+                        list.add(dss.getValue(Job_Ad.class));
+                    }
+
                     //shows all jobs posted by the agency
-                    if ((dss.getValue(Job_Ad.class).getUsername()).equals(Session.LiveSession.user.getUsername())) {
+                   /* if ((dss.getValue(Job_Ad.class).getUsername()).equals(Session.LiveSession.user.getUsername())) {
                         list.add(dss.getValue(Job_Ad.class));
                         available.add(dss.getValue(Job_Ad.class).getAvaiable());
                         keys.add(dss.getKey());
-                    }
+                    } */
                 }
                 myJobAdapter = new JobAdapter( list, Agency_Posted_Jobs.this);
                 rv.setAdapter(myJobAdapter);

@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NurseToday">
+        <activity android:name=".Forum_AddCom"></activity>
+        <activity android:name=".Forum_Topic_Details" />
+        <activity android:name=".View.Post_Job_Image_upload" />
+        <activity android:name=".Forum_New_Topic" />
         <activity android:name=".Agency_Posted_Jobs" />
         <activity android:name=".View.Post_Job2" />
         <activity android:name=".View.MainActivity" />
@@ -20,16 +24,13 @@
         <activity android:name=".View.Register_Nurse" />
         <activity android:name=".View.User_Type_Reg" />
         <activity android:name=".View.ResetPw" />
-
-        <activity
-            android:name=".View.Post_Job_Image_upload">
+        <activity android:name=".Forum_List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
